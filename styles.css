@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+ /**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ /**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ /**
+   Упрощаем работу с изображениями
+  */
+ img {
+   display: block;
+   max-width: 100%;
+ }
+ 
+ /**
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+ html {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   height: 100%;
+   /**
+     Плавный скролл
+    */
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   min-height: 100%;
+   /**
+     Унифицированный интерлиньяж
+    */
+   line-height: 1.5;
+ }
+ 
+ /**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+ @media (prefers-reduced-motion: reduce) {
+   * {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }
+
+:root {
+    --dark-blue: #1C1E23;
+    --dark-charcoal: #333333;
+    --picton-blue: #489DFF;
+    --white: #FFFFFF;
+    --dark-blue-two: #525F7F;
+    --lightskyblue: #87CEFA;
+
+    --font-family-base: 'Poppins', sans-serif;
+    --font-family-two: 'Montserrat', sans-serif;
+
+    --container-width: 960px;
+    --container-padding-x: 15px;
+    --container-margin: 130px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base);
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+}
+
+.header-logo {
+    display: inline-block;
+}
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 19px;
+}
+
+/* Main, section 1 and section 2 */
+
+.container-section-one {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+}
+
+.container-section-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  margin-top: 24px;
+}
+
+.container-info-section {
+    margin-top: 70px;
+}
+
+.container-product {
+  position: relative;
+  bottom: 30px;
+  left: 10px;
+}
+
+.info-section {
+    font-weight: 400;
+}
+
+.info-product {
+  display: inline-block;
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.text-price {
+  color: var(--picton-blue);
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.btn {
+  width: 131px;
+  height: 48px;
+  background-color: var(--picton-blue);
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.container-btn {
+  position: relative;
+  bottom: 16px;
+  left: 10px;
+}
+
+.text-button {
+  color: var(--white);
+  font-family: var(--font-family-two);
+}
+
+/* Footer */
+
+.footer {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  margin-top: 70px;
+}
+
+.footer-info {
+  color: var(--dark-blue-two);
+}
+
+.email-link {
+  color: var(--picton-blue);
+}
+
+.footer-rights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-logo-footer {
+  display: inline-block;
+}
+
+.footer-links {
+  display: flex;
+  width: 300px;
+  padding-bottom: 24px;
+}
+
+.footer-rights {
+  margin-bottom: 15px;
+}
+
+.footer-contacts {
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  background-color: var(--lightskyblue);
+  transition: 0.5s;
+}
+
+@media (max-width: 800px) {
+  .section-photo {
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-section-one {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding-left: 17%;
+  }
+  
+  .container-section-two {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+    padding-left: 17%;
+  }
+
+  .footer-rights {
+    font-size: 12px;
+  }
+
+  .footer-contacts {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-section-one {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding-left: 10%;
+  }
+  
+  .container-section-two {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+    padding-left: 10%;
+  }
+}
