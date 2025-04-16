@@ -235,7 +235,7 @@ body {
   left: 10px;
 }
 
-.text-button {
+.btn {
   color: var(--white);
   font-family: var(--font-family-two);
 }
