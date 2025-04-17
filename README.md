@@ -1,1 +1,2 @@
-A simple website about wordpress plugins
+# Wordpress Plugins Website
+Wordpress Plugins - простой адаптивный одностраничный сайт про вордпресс плагины
